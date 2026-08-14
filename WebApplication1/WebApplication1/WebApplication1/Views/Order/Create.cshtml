@@ -1,0 +1,72 @@
+﻿@model Order
+
+@{
+    ViewData["Title"] = "Order Phone";
+}
+
+<h2>Заполните форму для заказа</h2>
+
+
+<div class="row">
+
+    <div class="col-md-6">
+
+        <form asp-action="Create" asp-controller="Order" method="post">
+
+            <div class="form-row">
+
+                <label for="">
+
+                    Имя покупателя
+
+                    <input asp-for="Name" type="text">
+
+                </label>
+
+            </div>
+
+            <div class="form-row">
+
+                <label for="">
+
+                    Адрес доставки
+
+                    <input asp-for="Address" type="text">
+
+                </label>
+
+            </div>
+
+            <div class="form-row">
+
+                <label for="">
+
+                    Номер телефона
+
+                    <input asp-for="ContactPhone" type="text">
+
+                </label>
+
+            </div>
+
+            <div class="form-row">
+
+                <label for="">
+
+                    Смартфон :
+
+                    <input disabled type="text" value="@Model.Phone.Name">
+
+                </label>
+
+                <input asp-for="PhoneId" type="hidden" value="@Model.Phone.Id">
+
+            </div>
+
+            <button type="submit">Заказать</button>
+
+        </form>
+
+    </div>
+
+</div>
